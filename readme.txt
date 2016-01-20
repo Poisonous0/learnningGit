@@ -18,5 +18,18 @@
 		第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；
 
 		第二步，使用命令git commit，完成。
-2.修改文件并提交
+		
+3.修改文件并提交
+	1）使用git status命令看看结果
+		git status 命令可以让我们时刻掌握仓库当前的状态
+	2）用命令 git diff 文件名 查看修改了什么内容
+		git diff readme.txt 
+	3）提交修改和提交新文件时一样的 
+		a）git add 文件名
+		b）在执行第二步git commit之前，我们再运行git status看看当前仓库的状态
+			git status告诉我们，将要被提交的修改包括readme.txt，下一步，就可以放心地提交了
+		c）git commit -m "提交注释"
+		d）提交后，我们再用git status命令看看仓库的当前状态
 
+4.版本回退
+		
