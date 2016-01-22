@@ -204,3 +204,7 @@
 		合并某分支到当前分支：git merge <name>
 
 		删除分支：git branch -d <name>
+		
+		存在问题:
+			对文件进行修改之后，在dev分支上不进行add和commit，此时切回到master，如果安装楼上的说法，会更新到master上一次commit的，那么应该添加的内容应该是没有的
+			
