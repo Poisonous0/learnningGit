@@ -220,4 +220,6 @@
 		$ git log --graph --pretty=oneline --abbrev-commit
 		
 	3.分支管理策略
+		合并分为两种： 第一种是 fast forward 强制合并  git merge
+					   第二种是禁用fast forward  git merge --no-ff -m "提示" 分支name 
 		
