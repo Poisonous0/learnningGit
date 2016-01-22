@@ -188,28 +188,36 @@
 			
 			
 四、分支管理
+	1.创建与合并
 	
-	小结
+		小结
 
-		Git鼓励大量使用分支：
+			Git鼓励大量使用分支：
 
-		查看分支：git branch
+			查看分支：git branch
 
-		创建分支：git branch <name>
+			创建分支：git branch <name>
 
-		切换分支：git checkout <name>
+			切换分支：git checkout <name>
 
-		创建+切换分支：git checkout -b <name>
+			创建+切换分支：git checkout -b <name>
 
-		合并某分支到当前分支：git merge <name>
+			合并某分支到当前分支：git merge <name>
 
-		删除分支：git branch -d <name>
-<<<<<<< HEAD
-	
-	分支 ~~~~~~~~~~~~~~~~~~~~~~
-=======
-		
-		存在问题:
-			对文件进行修改之后，在dev分支上不进行add和commit，此时切回到master，如果安装楼上的说法，会更新到master上一次commit的，那么应该添加的内容应该是没有的
+			删除分支：git branch -d <name>
+
 			
->>>>>>> feature1
+			存在问题:
+				对文件进行修改之后，在dev分支上不进行add和commit，此时切回到master，如果安装楼上的说法，会更新到master上一次commit的，那么应该添加的内容应该是没有的
+
+	2.解决冲突
+		
+		小结
+		当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+		
+		用带参数的git log也可以看到分支的合并情况：
+
+		$ git log --graph --pretty=oneline --abbrev-commit
+		
+	3.分支管理策略
+		
