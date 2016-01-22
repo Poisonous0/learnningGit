@@ -223,3 +223,4 @@
 		合并分为两种： 第一种是 fast forward 强制合并  git merge
 					   第二种是禁用fast forward  git merge --no-ff -m "提示" 分支name 
 		
+		------------我是dev分支的内容，你想干嘛~~~~！！！
