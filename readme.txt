@@ -157,7 +157,7 @@
 				目前，在GitHub上的这个learngit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
 				现在，我们根据GitHub的提示，在本地的 testgit  仓库下运行命令：
 				
-				$ git remote add origin git@https://github.com/Poisonous0/testgit.git
+				$ git remote add origin git@github.com:Poisonous0/testgit.git
 				
 				添加后，远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。、
 				
@@ -180,3 +180,7 @@
 			关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
 
 			此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+			
+			
+			**************************************************************************************
+			git remote rm origin  删除已经创建的远程仓库名字
