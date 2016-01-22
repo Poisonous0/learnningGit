@@ -136,3 +136,47 @@
 				撤销缓冲区，使用git rest HEAD -- file ，直接丢弃缓冲区中的相应内容，只剩下工作区的版本。缓冲区中内容并没有覆盖到工作区，而是直接清除。
 				
 	5.删除文件
+
+----------------------------------------2016/01/22--------------------------------------------
+
+三、远程仓库
+	1.创建远程仓库
+		第1步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。
+			如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+				$ ssh-keygen -t rsa -C "youremail@example.com"
+				你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。
+
+				如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+
+		第2步：登陆GitHub，打开"Account settings"，"SSH Keys"页面：
+
+				然后，点"Add SSH Key"，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
+	2.添加远程库
+		第1步：登陆GitHub,在右上角找到"Create a new repo"按钮，创建一个新的仓库
+				在Repository name填入  testgit  ，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库
+				目前，在GitHub上的这个learngit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
+				现在，我们根据GitHub的提示，在本地的 testgit  仓库下运行命令：
+				
+				$ git remote add origin git@https://github.com/Poisonous0/testgit.git
+				
+				添加后，远程库的名字就是origin，这是Git默认的叫法，也可以改成别的，但是origin这个名字一看就知道是远程库。、
+				
+		第2步：就可以把本地库的所有内容推送到远程库上：
+			$ git push -u origin master
+			
+			把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。
+			由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+			推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样：
+			从现在起，只要本地作了提交，就可以通过命令：
+
+			$ git push origin master
+			
+			把本地master分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！
+			
+		小结
+
+			要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+
+			关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+
+			此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
