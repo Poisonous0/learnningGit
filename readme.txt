@@ -224,4 +224,4 @@
 					   第二种是禁用fast forward  git merge --no-ff -m "提示" 分支name 
 		
 	4.bug分支
-		git是一个软件
+		git is a soft
